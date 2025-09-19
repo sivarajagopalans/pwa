@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Profile Card PWA</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; padding: 20px; }
+  .card {
+    background: white;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  .card h1 {
+    font-size: 22px;
+    margin: 10px 0 5px 0;
+  }
+  .card .title {
+    color: grey;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  .card button {
+    border: none;
+    background: #007BFF;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .card button:hover {
+    background: #0056b3;
+  }
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#007BFF">
+</head>
+<body>
+<div class="card">
+  <img src="icon.png" alt="Profile Picture" />
+  <h1>Jane Doe</h1>
+  <p class="title">Software Developer</p>
+  <p>Example Company</p>
+  <button onclick="alert('Contacting Jane Doe')">Contact</button>
+</div>
+
+<script>
+  // Basic JS for interactivity (alert on button click)
+</script>
+</body>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js')
+      .then(() => console.log('Service Worker Registered'))
+      .catch(err => console.log('Service Worker Registration Failed:', err));
+  }
+</script>
+</html>
